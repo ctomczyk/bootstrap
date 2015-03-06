@@ -1,0 +1,10 @@
+{
+    "rules": {
+        "no-alert": 1,
+        "camelcase": 0,
+        "quotes": [ 1, "single" ],
+        "no-console": 0,
+        "no-new-func": 1,
+        "no-underscore-dangle":  0
+    }
+}
