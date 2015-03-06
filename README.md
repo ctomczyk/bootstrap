@@ -32,7 +32,8 @@ A Grunt tasks:
         
     * *validate* - Validate all files using amdcheck, eslint, jslint, htmlhint, jsonlint.
     
-    * *tests* - run Jasmine tests using Karma. A simple tool that allows you to execute JavaScript code in multiple real browsers. https://github.com/karma-runner/karma
+    * *tests* - run Jasmine tests using Karma. A simple tool that allows you to execute JavaScript code in multiple real browsers. Also, this will generate 2 reports: coverage and junit.
+        https://github.com/karma-runner/karma
     
     * *manifest* - generate application manifest cache file; see : https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache.
         grunt-manifest https://github.com/gunta/grunt-manifest
