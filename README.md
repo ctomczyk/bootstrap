@@ -63,6 +63,10 @@ Here sass files are observed and whenever they change the new CSS
 package is build. Also, script files are observed and whenever they
 change the validation task is run.
 
+= npm modules *
+
+Run *npm update* to get all npm modules.
+
 # FAQ
 
 1. How to fix SSL problem when using Ruby "gem install"?
