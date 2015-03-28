@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build:dev', 'Prepare application package for dev, non-minified', ['validate', 'clean:all', 'sass:dev', 'requirejs:dev']);
     grunt.registerTask('build:production', 'Prepare application package for production, minified', ['validate', 'clean:all', 'sass:dist', 'requirejs:production']);
     grunt.registerTask('optimizeimg', 'Optimizing images', ['imagemin']);
-    grunt.registerTask('validate', 'Validate all files', ['lintspaces', 'amdcheck', 'eslint', 'lint:client', 'jscs', 'htmlhint', 'jsonlint']);
+    grunt.registerTask('validate', 'Validate all files', ['lintspaces', 'amdcheck', 'eslint', 'jscs', 'htmlhint', 'jsonlint']);
     grunt.registerTask('tests', 'Run unit tests', ['test:unit']);
     grunt.registerTask('watch', 'Run predefined tasks whenever watched file changes. LiveReload included.', ['esteWatch']);
     // run "grunt manifest" to generate application manifest cache file; see : https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache

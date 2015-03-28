@@ -75,3 +75,7 @@ Replace the ssl gem source with non-ssl as a temp solution:
 
 gem sources -r https://rubygems.org/
 gem sources -a http://rubygems.org/
+
+2. I see errors like: Object.keys called on non-object
+
+Try update npm itself: npm install -g npm@next
