@@ -5,3 +5,4 @@ reports/
 test-results.xml
 npm-debug.log
 .sass-cache
+www/
