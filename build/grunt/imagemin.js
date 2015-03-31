@@ -9,11 +9,11 @@
                 optimizationLevel: 7
             },
             files: [{
-                cwd: './src/',
-                dest: './www/images/',
+                cwd: './src/images/',
+                dest: './www/',
                 expand: true,
-                flatten: true,
-                src: ['**/*.{png,jpg,gif}']
+                flatten: false,
+                src: ['**/*.{png,jpg,gif,svg}']
             }]
         }
     };
