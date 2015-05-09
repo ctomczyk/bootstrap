@@ -1,5 +1,5 @@
 /*jslint devel: true, evil: true*/
-/*globals define, console, document, head*/
+/*globals define, console, document*/
 
 (function (global) {
     'use strict';
@@ -19,13 +19,13 @@
 
             script.async = 'async';
             script.src = url;
-            document.head.insertBefore(script, head.firstChild);
+            document.head.insertBefore(script, document.head.firstChild);
         }
 
         function Request(options) {
 
             if (!options || typeof options !== 'object') {
-                throw new Error('[ajax > Request constructor] argument "options" is not an object');
+                throw new Error('[http > Request constructor] argument "options" is not an object');
             }
 
             this.xhrObject = null;
@@ -120,7 +120,7 @@
             }
 
             try {
-                // , options.async, options.user, options.password
+                // options.async, options.user, options.password
                 xhr.open(options.method, options.url);
             } catch (errorThrown) {
                 options.error(xhr, xhr.statusText, errorThrown);
@@ -231,6 +231,7 @@
                 if (!this.done) {
                     this.timeoutID = global.setTimeout(abort, this.timeout);
                 }
+
             } catch (errorThrown) {
                 xhr.onreadystatechange = null;
                 this.done = true;
@@ -389,6 +390,28 @@
 
         Request.send = function (options) {
             return new Request(options);
+        };
+
+        Request.sendForm = function (formElement, url) {
+
+            var dataForm;
+
+            if (!url) {
+                url = formElement.action;
+            }
+
+            if (global.FormData) {
+                dataForm = new global.FormData(formElement);
+            } else {
+                dataForm = this.serializeForm(formElement);
+            }
+
+            return new Request({
+                data: dataForm,
+                method: formElement.method || 'POST',
+                url: url
+            });
+
         };
 
         Request.jsonp = function (options) {
